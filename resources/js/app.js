@@ -79,17 +79,23 @@ const swiper = new Swiper('.swiper', {
         1000: {
             slidesPerView: 2,
             spaceBetween: 50,
+            loop: true,
         },
         1520: {
             slidesPerView: 3,
-
+            loop: false,
         }
     }
 });
 
 function preloader() {
-
+    window.addEventListener('load', function () {
+        let preloader = document.querySelector('.preloader-js');
+        fadeOut(preloader)
+    })
 }
+
+preloader()
 
 function linkMenuScroll() {
     let buttons = document.querySelectorAll('.scroll-menu-js');

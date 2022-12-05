@@ -15,17 +15,24 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Инновационная международная компания. Мы являемся пионерами во внедрении передовых технологий АПК для производства каннабиса на территории королевства Таиланд.  Используя достижения науки, мы обеспечиваем производство каннабис-содержащих продуктов мирового уровня для рекреационных и медицинских целей.">
+    <meta property="og:title" content="@yield("title")">
+    <meta property="og:description" content="Инновационная международная компания. Мы являемся пионерами во внедрении передовых технологий АПК для производства каннабиса на территории королевства Таиланд.  Используя достижения науки, мы обеспечиваем производство каннабис-содержащих продуктов мирового уровня для рекреационных и медицинских целей.">
+    <meta property="og:image" content="/images/logo.svg">
+    <meta property="og:url" content=https://gg-pharm.com/">
     <title>@yield("title")</title>
     @vite(['resources/js/app.js'])
 </head>
 <body>
+<div class="preloader preloader-js animate__animated">
+    <img src="images/preloader.svg" alt="preloader" class="preloader__img">
+</div>
 <main>
-    <header class="header">
+    <header class="header {{ Route::is('index') ? 'header__landing' : ''}}">
         <div class="container header__container">
-            <a href="#"><img src="{{asset('images/logo.svg')}}" alt="Logo GGP" class="white-logo"></a>
+            <a href="/"><img src="{{asset('images/logo.svg')}}" alt="Logo GGP" class="white-logo"></a>
             <div class="header__menu-wrap animate__animated mobile-menu-block-js animate__faster">
                 <nav class="header__menu">
-                    <a href="#" class="header__link">{{ __('landing.menu_1') }}</a>
+                    <a href="{{ route('about') }}" class="header__link">{{ __('landing.menu_1') }}</a>
                     <a href="#" class="header__link">{{ __('landing.menu_2') }}</a>
                     <a href="#" data-menu="products" class="header__link scroll-menu-js">{{ __('landing.menu_3') }}</a>
                     <a href="#" data-menu="making" class="header__link scroll-menu-js">{{ __('landing.menu_4') }}</a>
@@ -35,7 +42,7 @@
             </div>
             <div class="header__lang-wrap">
                 <a href="{{ route('locale', __('landing.next_lang')) }}" class="header__lang-link">
-                    <img src="{{asset('images/flags/'.  __('landing.next_lang') . '.png')}}" alt="flag" class="header__lang">
+                    {{ __('landing.next_lang_text') }}
                 </a>
                 <button class="toggle-hamburger mobile-menu-btn-js toggle-hamburger__animx">
                     <span></span>

@@ -20,5 +20,9 @@ Route::get('/locale/{locale}', [MainController::class, 'changeLocale'])->name('l
 Route::middleware(['set_locale'])->group(function () {
     Route::get('/', function () {
         return view('main.landing');
-    });
+    })->name('index');
+
+    Route::get('/about', function () {
+        return view('main.about');
+    })->name('about');;
 });

@@ -33,6 +33,10 @@
     .products__swiper {
         overflow: hidden;
     }
+
+    .products__slide:hover .products__item {
+        transform: none;
+    }
 }
 
 @media all and (max-width: 1320px) {

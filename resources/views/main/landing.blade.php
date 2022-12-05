@@ -1,6 +1,6 @@
 @extends("layouts.main")
 @section("title")
-    Green Grow Pharmaceuticals
+    Green Grow Pharmaceuticals | Cannabis
 @endsection
 
 @section("content")
@@ -109,9 +109,10 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide products__slide">
+                        <div class="products__yellow"></div>
                         <a href="#" class="products__item">
                             <div class="products__img-wrap">
-                                <img src="images/products/icon_1.png" alt="cannabis" class="products__img">
+                                <img src="images/products/icon_1.svg" alt="cannabis" class="products__img">
                             </div>
                             <div class="products__text-wrap">
                                 <div class="title-3 products__title">{{__('landing.product_1_title')}}</div>
@@ -129,9 +130,10 @@
                         </a>
                     </div>
                     <div class="swiper-slide products__slide">
+                        <div class="products__yellow"></div>
                         <a href="#" class="products__item">
                             <div class="products__img-wrap">
-                                <img src="images/products/icon_2.png" alt="cannabis" class="products__img">
+                                <img src="images/products/icon_2.svg" alt="cannabis" class="products__img">
                             </div>
                             <div class="products__text-wrap">
                                 <div class="title-3 products__title">{{__('landing.product_2_title')}}</div>
@@ -149,9 +151,10 @@
                         </a>
                     </div>
                     <div class="swiper-slide products__slide">
+                        <div class="products__yellow"></div>
                         <a href="#" class="products__item">
                             <div class="products__img-wrap">
-                                <img src="images/products/icon_3.png" alt="cannabis" class="products__img">
+                                <img src="images/products/icon_3.svg" alt="cannabis" class="products__img">
                             </div>
                             <div class="products__text-wrap">
                                 <div class="title-3 products__title">{{__('landing.product_3_title')}}</div>
@@ -163,6 +166,27 @@
                                     <img src="images/products/icons/pills 1 (Traced).png" alt="tea" class="products__ico">
                                     <img src="images/products/icons/free-icon-mortar-3997278 1 (Traced).png" alt="food" class="products__ico">
                                     <img src="images/products/icons/cbd-oil 1 (Traced).png" alt="cookie" class="products__ico">
+                                </div>
+                                <div class="button button_yellow products__btn">{{__('landing.learn_more')}}</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide products__slide">
+                        <div class="products__yellow"></div>
+                        <a href="#" class="products__item">
+                            <div class="products__img-wrap">
+                                <img src="images/products/icon_4.svg" alt="cannabis" class="products__img">
+                            </div>
+                            <div class="products__text-wrap">
+                                <div class="title-3 products__title">{{__('landing.product_4_title')}}</div>
+                                <div class="title-3 products__sub-title">{{__('landing.product_4_text')}}</div>
+                                <p class="products__desc text">{{__('landing.product_4_desc')}}</p>
+                            </div>
+                            <div class="products__btn-wrap">
+                                <div class="products__ico-wrap">
+                                    <img src="images/products/icons/tea 1 (Traced).png" alt="tea" class="products__ico">
+                                    <img src="images/products/icons/food.png" alt="food" class="products__ico">
+                                    <img src="images/products/icons/free-icon-cookies-6880442 1 (Traced).png" alt="cookie" class="products__ico">
                                 </div>
                                 <div class="button button_yellow products__btn">{{__('landing.learn_more')}}</div>
                             </div>
@@ -304,6 +328,7 @@
                 </div>
                 <div class="col col-6 col-m-12">
                     <form action="#" class="contacts__form">
+                        @csrf
                         <input placeholder="{{__('landing.contacts_name')}}" name="name" type="text" class="contacts__input">
                         <input placeholder="{{__('landing.contacts_phone')}}" name="name" type="text" class="contacts__input">
                         <input placeholder="{{__('landing.contacts_mail')}}" name="name" type="text" class="contacts__input">
