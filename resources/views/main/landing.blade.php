@@ -10,7 +10,7 @@
                 <div class="col col-6 col-xxl-8 col-m-12">
                     <div class="start__text-wrap">
                         <h2 class="start__title title-1">{{__('landing.start_title')}}</h2>
-                        <a class="button" href="#">{{__('landing.learn_more')}}</a>
+                        <a class="button" href="/#making">{{__('landing.learn_more')}}</a>
                     </div>
                 </div>
             </div>
@@ -23,10 +23,10 @@
                     <h3 class="title-2 about__title">{{__('landing.about_title')}}</h3>
                     <h4 class="title-3 about__sub-title">Green Grow Pharmaceuticals</h4>
                     <p class="text about__text">{{__('landing.about_text')}}</p>
-                    <a class="button button_yellow" href="#">{{__('landing.learn_more')}}</a>
+                    <a class="button button_yellow" href="/about">{{__('landing.learn_more')}}</a>
                 </div>
                 <div class="col col-8 col-m-12">
-                    <img src="images/about_img.png" alt="about us" class="about__img">
+                    <img src="images/about/img_{{__('landing.this_lang')}}.webp" alt="about us" class="about__img">
                 </div>
             </div>
         </div>
@@ -63,14 +63,14 @@
                                 <a href="#" class="button">{{__('landing.learn_more')}}</a>
                             </div>
                             <div class="col col-5 col-m-12">
-                                <img src="images/tabs/canna.png" alt="cannabis" class="tabs__img">
+                                <img src="images/tabs/canna.webp" alt="cannabis" class="tabs__img">
                             </div>
                         </div>
                     </div>
                     <div class="tabs__item tab-block-js animate__animated" id="tab_three">
                         <div class="row row-justify-around">
                             <div class="col col-5 col-m-12 col-m-margin-b">
-                                <img src="images/tabs/thai.jpg" alt="cannabis" class="tabs__img">
+                                <img src="images/tabs/thai.webp" alt="cannabis" class="tabs__img">
                             </div>
                             <div class="col col-5 col-m-12">
                                 <div class="text tabs__text">
@@ -78,7 +78,7 @@
                                     <p class="text tabs__text">{{__('landing.tabs_3_text_2')}}</p>
                                     <p class="text tabs__text">{{__('landing.tabs_3_text_3')}}</p>
                                 </div>
-                                <a href="#" class="button">{{__('landing.learn_more')}}</a>
+                                <a href="{{ route('legal') }}" class="button">{{__('landing.learn_more')}}</a>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                                 <a href="#" class="button">{{__('landing.learn_more')}}</a>
                             </div>
                             <div class="col col-5 col-m-12">
-                                <img src="images/tabs/map.png" alt="cannabis" class="tabs__img">
+                                <img src="images/tabs/map.webp" alt="cannabis" class="tabs__img">
                             </div>
                         </div>
                     </div>
@@ -211,19 +211,19 @@
                 <div class="col col-8 col-m-12">
                     <div class="row">
                         <div class="col col-8 making__photo-col col-m-6">
-                            <img src="images/making/Frame 66.png" alt="" class="making__img">
+                            <img src="images/making/img_1.webp" alt="" class="making__img">
                         </div>
                         <div class="col col-4 making__photo-col col-m-6">
-                            <img src="images/making/Frame 67.png" alt="" class="making__img">
+                            <img src="images/making/img_2.webp" alt="" class="making__img">
                         </div>
                         <div class="col col-3 making__photo-col col-m-6">
-                            <img src="images/making/Frame 68.png" alt="" class="making__img">
+                            <img src="images/making/img_3.webp" alt="" class="making__img">
                         </div>
                         <div class="col col-5 making__photo-col col-m-6">
-                            <img src="images/making/Frame 69.png" alt="" class="making__img">
+                            <img src="images/making/img_4.webp" alt="" class="making__img">
                         </div>
                         <div class="col col-4 making__photo-col col-m-12">
-                            <img src="images/making/Frame 70.png" alt="" class="making__img">
+                            <img src="images/making/img_5.webp" alt="" class="making__img">
                         </div>
                     </div>
                 </div>
@@ -236,19 +236,19 @@
                 <div class="col col-4 col-m-12 col-m-margin-b">
                     <h3 class="title-2 software__title">Global Software</h3>
                     <p class="text software__text">{{__('landing.software_text_1')}}</p>
-                    <a href="#" class="button button_yellow">{{__('landing.learn_more')}} Weed Finder</a>
+                    <a href="https://weed-finder.store/" class="button button_yellow">{{__('landing.learn_more')}} Weed Finder</a>
                 </div>
                 <div class="col col-6 col-m-12">
-                    <img class="software__img" src="images/software/telephone.png" alt="phone weed finder application">
+                    <img class="software__img" src="images/software/telephone.webp" alt="phone weed finder application">
                 </div>
             </div>
             <div class="row software__row row-justify-between row-align-center">
                 <div class="col col-6 col-m-12 col-m-margin-b">
-                    <img class="software__img" src="images/software/laptop.png" alt="phone weed finder application">
+                    <img class="software__img" src="images/software/laptop.webp" alt="phone weed finder application">
                 </div>
                 <div class="col col-4 col-m-12">
                     <p class="text software__text">{{__('landing.software_text_2')}}</p>
-                    <a href="#" class="button button_yellow">{{__('landing.learn_more')}} Profit-on-Weed</a>
+                    <a href="https://profitonweed.com/" class="button button_yellow">{{__('landing.learn_more')}} Profit-on-Weed</a>
                 </div>
             </div>
         </div>
@@ -273,7 +273,7 @@
                 </div>
                 <div class="col col-7 col-m-12">
                     <div class="mission__video-wrap">
-                        <img class="mission__word" src="images/g_word.png" alt="g">
+                        <img class="mission__word" src="images/g_word.svg" alt="g">
                         <video class="mission__video" width="100%" height="500px" preload="auto" no-controls autoplay loop playsinline muted>
                             <source src="videos/V3NC35A.mov" type="video/mp4">
                         </video>
@@ -321,17 +321,17 @@
                 <div class="col col-6 col-m-12 col-m-margin-b">
                     <div class="title-2 contacts__title">{{__('landing.contacts_title')}}</div>
                     <p class="text contacts__text">{{__('landing.contacts_desc')}}</p>
-                    <div>
-                        <a href="tel:+0964691190" class="contacts__info text">+0964691190</a>
-                        <a href="#" class="contacts__info text">18, 98 M.6 Soi Sreekor, Kathu, Kathu District, Phuket 83120</a>
-                    </div>
+{{--                    <div>--}}
+{{--                        <a href="tel:+0964691190" class="contacts__info text">+0964691190</a>--}}
+{{--                        <a href="#" class="contacts__info text">18, 98 M.6 Soi Sreekor, Kathu, Kathu District, Phuket 83120</a>--}}
+{{--                    </div>--}}
                 </div>
                 <div class="col col-6 col-m-12">
-                    <form action="#" class="contacts__form">
+                    <form action="/mail/send" method="POST" class="contacts__form contacts-form-js">
                         @csrf
-                        <input placeholder="{{__('landing.contacts_name')}}" name="name" type="text" class="contacts__input">
-                        <input placeholder="{{__('landing.contacts_phone')}}" name="name" type="text" class="contacts__input">
-                        <input placeholder="{{__('landing.contacts_mail')}}" name="name" type="text" class="contacts__input">
+                        <input required minlength="3" placeholder="{{__('landing.contacts_name')}}" name="name" type="text" class="contacts__input">
+                        <input placeholder="{{__('landing.contacts_phone')}}" name="phone" type="text" class="contacts__input">
+                        <input placeholder="{{__('landing.contacts_mail')}}" name="email" type="email" class="contacts__input">
                         <div class="contacts__btn-wrap">
                             <button class="button contacts__btn">{{__('landing.contacts_btn')}}</button>
                             <span class="contacts__error">{{__('landing.contacts_error')}}</span>
@@ -341,4 +341,11 @@
             </div>
         </div>
     </section>
+    <div class="contact-popup animate__animated">
+        <div class="close contact-popup__close"></div>
+        <div class="contact-popup__text">
+            <div class="contact-popup__title title-2">{{__('landing.request_title')}}</div>
+            <div class="contact-popup__desc">{{__('landing.request_subtitle')}}</div>
+        </div>
+    </div>
 @endsection

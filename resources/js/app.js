@@ -3,6 +3,33 @@ import './../css/app.css'
 import './../css/media.css'
 import 'animate.css';
 
+function ajaxAsync({url, method, data, success, headers}) {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open(method, url, true);
+    if (headers) {
+        xhr.setRequestHeader(headers[0], headers[1]);
+    }
+    if (data) {
+        if(typeof data === 'string') {
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        }
+        xhr.send(data)
+    } else {
+        xhr.send()
+    }
+
+    if (success) {
+        xhr.addEventListener('load', function () {
+            if (this.readyState === 4 && this.status === 200) {
+                success(this.responseText);
+            }
+        });
+    }
+
+    return xhr;
+}
+
 function tabs() {
     let buttons = document.querySelectorAll('.tab-js');
 
@@ -43,7 +70,6 @@ function fadeOut(elem, display = 'block') {
     elem.classList.add('animate__fadeOut');
     elem.addEventListener('animationend', function () {
         elem.style.display = 'none';
-        console.log('ok')
     }, {
         capture: false,
         once: true,
@@ -66,9 +92,9 @@ function mobileButton() {
         }
     })
 }
-mobileButton()
+mobileButton();
 
-const swiper = new Swiper('.swiper', {
+new Swiper('.swiper', {
     slidesPerView: 1,
     spaceBetween: 100,
     autoplay: {
@@ -89,13 +115,17 @@ const swiper = new Swiper('.swiper', {
 });
 
 function preloader() {
-    window.addEventListener('load', function () {
+    setTimeout(function () {
         let preloader = document.querySelector('.preloader-js');
         fadeOut(preloader)
-    })
+    }, 2000)
+    // window.addEventListener('load', function () {
+    //     let preloader = document.querySelector('.preloader-js');
+    //     fadeOut(preloader)
+    // })
 }
 
-preloader()
+preloader();
 
 function linkMenuScroll() {
     let buttons = document.querySelectorAll('.scroll-menu-js');
@@ -103,11 +133,81 @@ function linkMenuScroll() {
     buttons.forEach(function (elem) {
         elem.addEventListener('click', function (e) {
             e.preventDefault();
-            let block = this.getAttribute('data-menu');
-            block = document.getElementById(block);
+            let attr = this.getAttribute('data-menu');
+            let block = document.getElementById(attr);
+            if (!block) {
+                location.href = '/#' + attr;
+            }
             block.scrollIntoView({behavior: "smooth"});
         })
     })
 }
 
-linkMenuScroll()
+linkMenuScroll();
+
+function getCsrf() {
+    let elem = document.querySelector('meta[name="csrf-token"]')
+
+    return elem.getAttribute('content');
+}
+
+function contactForm() {
+    let form = document.querySelector('.contacts-form-js');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let values = new FormData(this);
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Lc-oQ8kAAAAAKV0kJwWZbv0YQ6PzsGh3VqGQFxB', {action: 'submit'}).then(function(token) {
+                    ajaxAsync({
+                        url: this.action,
+                        method: 'POST',
+                        data: values,
+                        success,
+                        headers: ['X-CSRF-TOKEN', getCsrf()]
+                    })
+
+                    function success(data) {
+                        data = JSON.parse(data);
+                        if (data.status) {
+                            let popup = document.querySelector('.contact-popup');
+                            fadeIn(popup, 'flex')
+                            let close = document.querySelector('.contact-popup__close')
+                            close.addEventListener('click', function () {
+                                fadeOut(popup);
+                            })
+                        }
+                    }
+                });
+            });
+
+        })
+    }
+}
+
+contactForm();
+
+function customSelect() {
+    let btn = document.querySelector('.custom-select');
+
+    if (btn) {
+        btn.addEventListener('click', function () {
+            let status = this.getAttribute('data-open')
+            let block = btn.nextElementSibling;
+
+            if (status === 'false') {
+                fadeIn(block, 'flex')
+                this.setAttribute('data-open', 'true')
+            } else {
+                fadeOut(block)
+                this.setAttribute('data-open', 'false')
+            }
+        })
+    }
+}
+
+customSelect()
+
+
+
+

@@ -49,8 +49,15 @@
 }
 
 @media all and (max-width: 1120px) {
+    .footer__submenu {
+        flex-direction: column;
+    }
+    .contacts__btn {
+        width: 100%;
+        margin-bottom: 15px;
+    }
     .container {
-        max-width: 920px;
+        /*max-width: 920px;*/
         padding-right: 30px;
         padding-left: 30px;
     }
@@ -238,9 +245,69 @@
     .contacts__btn {
         margin-right: 0;
     }
+
+    .about-page__img {
+        width: 50%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .about-page__img_sm {
+        position: relative;
+        bottom: 0;
+        width: 50%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .about-page__img-wrap {
+        display: flex;
+    }
+
+    .investors__g {
+        display: none;
+    }
+
+    .investors__cannabis {
+        display: none;
+    }
+
+    .header__lang {
+        margin-left: 35px;
+    }
+
+    .header__lang-drop {
+        left: calc(100% + 15px);
+        top: 0;
+        flex-direction: row;
+        gap: 15px;
+    }
 }
 
 @media all and (max-width: 550px) {
+    .col-s-12 {
+        width: 100%;
+    }
+
+    .profit-about {
+        flex-wrap: wrap;
+    }
+
+    .profit-about__text {
+        margin-right: 0;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .about-page__cam {
+        flex-wrap: wrap;
+    }
+
+    .about-page__cam-img {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
     .container {
         width: 100%;
         padding-right: 15px;
@@ -265,6 +332,12 @@
         width: 100%;
         box-sizing: border-box;
         text-align: center;
+    }
+}
+
+@media all and (max-width: 425px) {
+    .about__img {
+        display: none;
     }
 }
 

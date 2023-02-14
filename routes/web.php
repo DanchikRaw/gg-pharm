@@ -25,4 +25,14 @@ Route::middleware(['set_locale'])->group(function () {
     Route::get('/about', function () {
         return view('main.about');
     })->name('about');;
+
+    Route::get('/investors', function () {
+        return view('main.investors');
+    })->name('investors');;
+
+    Route::get('/legal-business', function () {
+        return view('main.legal-business');
+    })->name('legal');;
+
+    Route::post('/mail/send', [MainController::class, 'sendMail']);
 });
