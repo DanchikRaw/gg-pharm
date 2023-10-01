@@ -1,1 +1,2 @@
-# A simple multilingual landing page on Laravel.
+# Description
+A simple multilingual landing page on Laravel.
